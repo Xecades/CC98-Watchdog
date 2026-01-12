@@ -16,7 +16,7 @@ wheels = [
 ]
 
 [[package]]
-name = "cc98-notify"
+name = "cc98-watchdog"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [

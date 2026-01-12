@@ -29,6 +29,13 @@ KEYWORDS = [
     "node",
     "html",
 ]
+BANNED_KEYWORDS = [
+    "实习",
+    "兼职",
+    "招聘",
+    "校招",
+    "全职",
+]
 
 
 def check_topic_condition(topic: dict) -> bool:
@@ -40,7 +47,9 @@ def check_topic_condition(topic: dict) -> bool:
 
     # 459 is 实习兼职
     if board_id == 459:
-        if any(keyword in title for keyword in KEYWORDS):
+        is_key = any(keyword in title for keyword in KEYWORDS)
+        is_banned = any(banned in title for banned in BANNED_KEYWORDS)
+        if is_key and not is_banned:
             return True
 
     return False
