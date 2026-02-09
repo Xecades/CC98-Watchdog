@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  cc98-watchdog:
+    build: .
+    container_name: cc98-watchdog
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - TZ=Asia/Shanghai
+    # Uncomment below to limit resources
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '0.5'
+    #       memory: 256M
