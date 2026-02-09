@@ -9,6 +9,13 @@ services:
       - .env
     environment:
       - TZ=Asia/Shanghai
+      # Proxy settings - allows container to use host proxy
+      - https_proxy=http://host.docker.internal:7890
+      - http_proxy=http://host.docker.internal:7890
+      - all_proxy=socks5://host.docker.internal:7890
+      - HTTPS_PROXY=http://host.docker.internal:7890
+      - HTTP_PROXY=http://host.docker.internal:7890
+      - ALL_PROXY=socks5://host.docker.internal:7890
     # Uncomment below to limit resources
     # deploy:
     #   resources:
